@@ -1,10 +1,11 @@
 import numpy
 
 triangular_membership_function = {1:[1,1,1] , 2:[1,2,3] , 3:[2,3,4] , 4:[3,4,5] , 5:[4,5,6] , 6: [5,6,7] , 7:[6,7,8],8:[7,8,9],9:[9,9,9]}
-test_data = [[1,5,4,7],[0.2,1,0.5,3],[0.25,2,1,3],[0.142,0.33,0.33,1]]
+#test_data = [[1,5,4,7],[0.2,1,0.5,3],[0.25,2,1,3],[0.142,0.33,0.33,1]]
 
-def main():
+def fuzzy_AHP(AHP_matrix):
 	#print(triangular_membership_function)
+	test_data = AHP_matrix
 	n = len(test_data)
 	fuzzified_test_data = numpy.zeros((n,n,3))
 
@@ -62,7 +63,7 @@ def main():
 
 	for i in range(n):
 		normalized_weights[i] = (1.0*weights[i])/(1.0*sum_weights)
-	print(normalized_weights)
+	#print(normalized_weights)
 
 	return normalized_weights
 
